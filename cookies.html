@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="shortcut icon" href="./assets/web-ico.svg" type="image/x-icon">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        .font-poppins {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Navegación -->
+    <nav id="nav"
+        class="lg:fixed w-full top-0 flex flex-wrap justify-between rounded-b-sm items-center py-5 px-5 bg-white">
+
+        <div class="hidden md:block w-40 h-40 rounded-full shrink-0 grow-0 overflow-hidden ">
+            <img class="w-full h-full object-cover" src="./assets/logo.jpg" alt="logo tienda" />
+        </div>
+
+        <h1 class="text-center text-6xl text-orange-400 font-bold">Bike</h1>
+
+        <!--Menú escritorio -->
+        <div id="left-arrow" class="ml-3 lg:hidden">
+            <img class="w-[40px] h-[40px]" src="assets/arrow-left.svg" alt="arrow-right">
+        </div>
+        <ul class="hidden lg:flex flex-wrap gap-2">
+            <li class="p-2 rounded-sm hover:bg-blue-500 hover:*:text-white"><a class="text-xl font-bold text-orange-400"
+                    href="index.html">Inicio</a></li>
+            <li class="p-2 rounded-sm hover:bg-blue-500 hover:*:text-white"><a class="text-xl font-bold text-orange-400"
+                    href="about.html">Acerca de</a></li>
+            <li class="p-2 rounded-sm hover:bg-blue-500 hover:*:text-white"><a class="text-xl font-bold text-orange-400"
+                    href="contact.html">Contacto</a></li>
+        </ul>
+
+        <!--Menú hamburguesa -->
+        <div id="b-menu"
+            class="opacity-0 pointer-events-none transition-opacity duration-300 absolute top-0 left-0  w-full h-screen lg:hidden grid grid-cols-2">
+            <div class="backdrop-blur-[2px] bg-black/50"></div>
+            <div id="col-right" class="z-1 h-full bg-white">
+                <div id="right-arrow" class="ml-4 mt-8">
+                    <img class="w-[50px] h-[50px]" src="assets/arrow-right.svg" alt="arrow-right">
+                </div>
+                <ul class="flex flex-col text-end justify-end flex-wrap">
+                    <li class="px-2 py-5 border-b-1 border-t-2 border-gray-200"><a
+                            class="text-xl font-bold text-orange-400" href="index.html">Inicio</a></li>
+                    <li class="px-2 py-5 "><a class="text-xl font-bold text-orange-400" href="about.html">Acerca de</a>
+                    </li>
+                    <li class="px-2 py-5 border-b-1 border-t-2 border-gray-200"><a
+                            class="text-xl font-bold text-orange-400" href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="mt-10 lg:mt-50 p-10">
+        <h1 class="text-4xl font-bold text-center">Cookies</h1>
+        <p class="mt-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita exercitationem veritatis omnis totam
+            perferendis quis odio consectetur, magni, dolorem a perspiciatis fugit? Et itaque nostrum totam deserunt
+            dignissimos sapiente. Quam, recusandae maiores! Voluptate unde ipsum consequatur eum ullam, quis obcaecati
+            ab
+            quisquam similique accusamus amet voluptatum esse! Provident aliquid, vero, incidunt molestiae amet maxime
+            possimus labore necessitatibus ducimus aliquam excepturi a minima quasi nesciunt ipsa, et adipisci! Quae aut
+            itaque et explicabo earum rerum in dicta illum? Perferendis, nobis at illo voluptatibus nostrum nihil
+            maiores
+            nemo hic quis eos dicta! Ducimus itaque eligendi nostrum at cumque atque sint quo iste deserunt asperiores
+            aperiam a amet, autem tenetur, corporis, eos molestias laborum consequatur! Ipsam quisquam impedit incidunt,
+            similique rem laudantium ullam minus tempore rerum modi vel odit quaerat odio ut necessitatibus beatae alias
+            dicta provident, fugiat quasi aliquid maiores dolorum harum laboriosam. Numquam ullam saepe est alias, fugit
+            tempora veritatis at minima excepturi eaque minus recusandae praesentium beatae obcaecati odio voluptatem
+            facere! Neque, soluta vero ipsam eveniet pariatur aspernatur? Maxime iste doloribus eius perspiciatis
+            ducimus
+            vero a natus incidunt, tenetur error illum delectus, sit quidem repellat quae cum officiis enim? Aut nostrum
+            ad
+            velit, ipsum architecto provident voluptate deleniti eum laboriosam placeat veritatis hic minima cumque
+            temporibus tempora voluptates distinctio explicabo perspiciatis est inventore! Itaque eligendi reiciendis
+            laborum deleniti, commodi perferendis veritatis vitae corporis veniam quisquam hic facere est, nobis aliquid
+            dolorum quis sit doloremque? Dicta explicabo iusto illo esse, aut dignissimos labore recusandae corrupti
+            fuga
+            maxime eos tempore? Debitis consequatur deleniti officia, et laboriosam dolore tempore distinctio vel nobis
+            quasi, expedita qui nostrum atque quo aspernatur? Officiis corporis deleniti, minus tempora, sit atque magni
+            commodi obcaecati laboriosam maxime officia assumenda dolorum aperiam, unde rerum sint nesciunt minima ut
+            dicta.
+            Culpa veritatis ipsa excepturi quas quasi debitis aspernatur distinctio, molestias nam, soluta ex eum nemo
+            ducimus in vitae tempore voluptates est. Libero numquam natus aliquid, voluptas odit dolorum animi laborum
+            ratione, laboriosam assumenda laudantium. Quia illum suscipit saepe, quod, magni, mollitia aspernatur dolor
+            commodi incidunt labore iure eum doloremque? Illum, id. Enim pariatur dolore animi odio quod velit iusto eum
+            voluptas corrupti voluptatem? Consectetur qui, aliquid ducimus tempora in maxime, at vero, ab ipsum nesciunt
+            assumenda ad non architecto nobis expedita amet? Quisquam repellendus cumque mollitia sapiente maiores? Esse
+            tempore, provident sequi eveniet quo temporibus, quidem consectetur delectus optio facilis inventore ullam
+            ut
+            deserunt voluptatem, eligendi sed quae! Eaque voluptatem corrupti voluptatum, dolorum nesciunt, aliquid
+            facere
+            minima beatae quas, consequuntur dicta aperiam iusto ullam esse officiis temporibus! Totam optio provident
+            quae
+            et, nobis similique beatae accusantium consectetur possimus magnam? Voluptates nam perferendis sed voluptate
+            ea
+            illo architecto est blanditiis numquam autem nemo similique beatae possimus quas velit asperiores obcaecati
+            tenetur laboriosam accusamus, illum repellendus cum? Minus possimus, deserunt modi optio cum quidem illo in.
+            Harum sint quas eaque minus labore et accusamus eligendi facere nemo dolorem sapiente voluptate temporibus
+            aliquam nam, a nobis pariatur, ipsa deleniti dolore ratione hic distinctio porro! Doloremque numquam quam
+            maiores soluta ad quo aperiam ex dolores commodi, eveniet odit laboriosam impedit expedita velit eligendi
+            culpa
+            rem amet quia. Sequi, id tempora. Rerum eius iure veniam consectetur eum consequuntur pariatur iusto aliquam
+            ducimus quis architecto dolore deserunt enim, et, voluptas necessitatibus aliquid obcaecati natus commodi
+            accusantium itaque nisi doloribus officia distinctio. Quidem, enim, suscipit dignissimos quos expedita aut
+            veritatis similique dolore aliquam at pariatur autem esse exercitationem voluptate! Quas veritatis
+            distinctio
+            voluptas dolores? Beatae eveniet suscipit veniam expedita molestias dolor repellat cupiditate dolore officia
+            eaque possimus provident voluptate, voluptates architecto fugit, animi nulla minima ipsam a est vitae illum
+            maxime placeat. Provident deleniti beatae sequi incidunt iure aliquam repellendus amet cumque unde
+            distinctio
+            eveniet consequatur itaque tenetur ullam corrupti, facilis, magni animi, nisi porro doloribus officia
+            nesciunt
+            quo ipsam. Voluptatibus, delectus? Quod nesciunt hic aspernatur, doloribus blanditiis vel saepe et?
+            Asperiores
+            possimus soluta quae modi praesentium odit mollitia eos quidem saepe, assumenda nam nisi rem ea omnis
+            cupiditate
+            molestiae! Fuga amet atque assumenda repellendus magnam molestiae. Eligendi, quaerat similique eos
+            laudantium
+            fugiat hic quas id quam eum aut dolores velit? Nam, aspernatur odit dolorum nobis sit in. Tempora, incidunt
+            ipsum soluta temporibus ex facere excepturi iure suscipit magni, eligendi nostrum. Ex autem mollitia
+            doloribus
+            iusto odit placeat blanditiis? Quis possimus accusamus laborum fugiat ullam, ducimus quos praesentium
+            aliquam
+            eum optio beatae animi, minus adipisci quod nulla aliquid iste dolor numquam suscipit, consectetur libero
+            eveniet aspernatur quisquam maxime! Ut non ipsum consequuntur praesentium illo accusantium animi rerum, ad
+            provident recusandae commodi repudiandae quae sequi eos iure fugit? Ad cum assumenda quas, atque in ipsum
+            nulla
+            provident quaerat deserunt adipisci. Nisi porro odio reiciendis eaque inventore aliquid ullam excepturi quis
+            quidem necessitatibus delectus sequi exercitationem, iure cupiditate eveniet doloribus cum! Deleniti illum
+            repudiandae suscipit laboriosam ipsa facilis et in doloribus asperiores ipsum quae omnis rem a ipsam
+            necessitatibus expedita adipisci eligendi dolorum, temporibus rerum numquam unde libero vitae nemo.
+            Doloremque
+            ex accusantium nobis architecto ratione vel. Delectus, earum iure. Nam eius praesentium magni veritatis
+            natus
+            quo provident tenetur eum qui exercitationem adipisci ratione, consequatur ea nesciunt eaque obcaecati
+            incidunt
+            ipsum voluptatem illum molestiae aliquam fugiat dolore. Quisquam repellat officia in quibusdam harum magni,
+            sapiente repudiandae vero animi fuga asperiores, aliquid magnam doloremque minus molestias similique
+            obcaecati
+            ipsam cupiditate doloribus veritatis, modi error. Est harum deleniti suscipit deserunt aspernatur nihil
+            voluptates ipsum omnis quo nam voluptatibus aut earum esse inventore sequi cumque quisquam quae accusamus ad
+            dolore, excepturi eum, amet officia ex. Commodi soluta dolorum quos, dicta dolores temporibus rerum
+            cupiditate
+            consectetur laboriosam necessitatibus sint, veritatis laborum velit consequatur blanditiis sunt labore
+            eveniet
+            asperiores quod atque accusamus fugiat natus explicabo facilis! Vitae provident corporis quaerat repudiandae
+            quisquam dolores, dicta quis eligendi at, quod cum. Est commodi perspiciatis cupiditate recusandae quae ad
+            autem
+            praesentium, corrupti eaque neque labore dignissimos, aliquam numquam facere tenetur harum cumque
+            aspernatur!
+            Sed, animi omnis! Voluptate, fuga necessitatibus nisi culpa excepturi quisquam, pariatur suscipit
+            exercitationem
+            sunt, amet perspiciatis? Nisi ipsum repudiandae asperiores debitis voluptatibus itaque, animi labore culpa,
+            fugit voluptatum natus laborum nesciunt impedit quia iure expedita.</p>
+    </main>
+
+    <!--Footer-->
+    <footer class="bg-orange-400">
+        <section class="flex py-5 justify-center gap-6">
+            <a class="w-10 h-10" href="https://wa.me/34679377876">
+                <img class="object-cover" src="assets/whatsapp.png" alt="whatsapp">
+            </a>
+            <a class="w-10 h-10" href="https://instagram.com">
+                <img src="assets/instagram.png" alt="instagram">
+            </a>
+            <a class="w-10 h-10" href="mail:marcomorenilla@gmail.com">
+                <img src="assets/gmail.png" alt="gmail">
+            </a>
+        </section>
+        <section class="pb-1 flex justify-center gap-4">
+            <p class="text-center">© Todos los derechos reservados</p>
+            <a class="underline text-blue-500" href="privacidad.html">Política de privacidad</a>
+        </section>
+    </footer>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

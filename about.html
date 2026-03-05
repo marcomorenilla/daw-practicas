@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="shortcut icon" href="./assets/web-ico.svg" type="image/x-icon">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        .font-poppins {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .animation-rtl {
+            animation: rtl 20s linear infinite;
+        }
+
+        @keyframes rtl {
+
+            0% {
+                transform: translateX(100%)
+            }
+
+
+            100% {
+                transform: translateX(-101%)
+            }
+        }
+    </style>
+</head>
+
+<body class="font-poppins">
+    <!--Navegación -->
+    <nav id="nav"
+        class="lg:fixed w-full top-0 flex flex-wrap justify-between rounded-b-sm items-center py-5 px-5 bg-white">
+
+        <div class="hidden md:block w-40 h-40 rounded-full shrink-0 grow-0 overflow-hidden ">
+            <img class="w-full h-full object-cover" src="./assets/logo.jpg" alt="logo tienda" />
+        </div>
+
+        <h1 class="text-center text-6xl text-orange-400 font-bold">Bike</h1>
+
+        <!--Menú escritorio -->
+        <div id="left-arrow" class="ml-3 lg:hidden">
+            <img class="w-[40px] h-[40px]" src="assets/arrow-left.svg" alt="arrow-right">
+        </div>
+        <ul class="hidden lg:flex flex-wrap gap-2">
+            <li class="p-2 rounded-sm hover:bg-blue-500 hover:*:text-white"><a class="text-xl font-bold text-orange-400"
+                    href="index.html">Inicio</a></li>
+            <li class="p-2 rounded-sm hover:bg-blue-500 hover:*:text-white"><a class="text-xl font-bold text-orange-400"
+                    href="about.html">Acerca de</a></li>
+            <li class="p-2 rounded-sm hover:bg-blue-500 hover:*:text-white"><a class="text-xl font-bold text-orange-400"
+                    href="contact.html">Contacto</a></li>
+        </ul>
+
+        <!--Menú hamburguesa -->
+        <div id="b-menu"
+            class="opacity-0 pointer-events-none transition-opacity duration-300 absolute top-0 left-0  w-full h-screen lg:hidden grid grid-cols-2">
+            <div class="backdrop-blur-[2px] bg-black/50"></div>
+            <div id="col-right" class="z-1 h-full bg-white">
+                <div id="right-arrow" class="ml-4 mt-8">
+                    <img class="w-[50px] h-[50px]" src="assets/arrow-right.svg" alt="arrow-right">
+                </div>
+                <ul class="flex flex-col text-end justify-end flex-wrap">
+                    <li class="px-2 py-5 border-b-1 border-t-2 border-gray-200"><a
+                            class="text-xl font-bold text-orange-400" href="index.html">Inicio</a></li>
+                    <li class="px-2 py-5 "><a class="text-xl font-bold text-orange-400" href="about.html">Acerca de</a>
+                    </li>
+                    <li class="px-2 py-5 border-b-1 border-t-2 border-gray-200"><a
+                            class="text-xl font-bold text-orange-400" href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="mt-10 lg:mt-50">
+
+        <!--Sección ¿Qiénes somos?-->
+        <section class="bg-orange-400 text-center py-10">
+            <h2 class="text-3xl md:text-4xl text-white font-bold">Nuestra historia</h2>
+            <article class="text-lg md:text-2xl font-semibold my-4 ">
+                <p class="p-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit quisquam ipsam unde ut
+                    quia
+                    laboriosam aliquid temporibus totam quidem deleniti!
+                </p>
+                <p class="p-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam cum sed consequatur
+                    maiores, quia
+                    corrupti quod, fugiat natus debitis deserunt reiciendis eligendi explicabo aperiam quos adipisci
+                    labore ab, eos quidem! Maiores inventore ducimus recusandae ipsam id enim quidem nesciunt, fuga
+                    delectus voluptatem explicabo fugit blanditiis? Commodi delectus eos distinctio eligendi.
+                </p>
+                <p class="p-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas asperiores, atque, quia
+                    cum, sunt
+                    sapiente iure quaerat necessitatibus natus velit voluptatibus veritatis ipsam. Voluptates odit
+                    asperiores vel dolorem voluptatem soluta?
+                </p>
+            </article>
+        </section>
+
+        <!--Sección Lo que dicen nuestros clientes-->
+        <section class="py-10">
+            <h2 class="text-3xl md:text-4xl text-center text-orange-400 font-bold">Lo que opinan de nosotros</h2>
+
+            <!--Persona 1-->
+            <article
+                class="border-1 border-gray-200 md:w-2/3 md:ml-auto md:mt-10 lg:w-2/5 lg:mr-70 m-3  text-center shadow-xl pl-2 py-2 rounded-lg flex justify-between items-center">
+                <div class="overflow-hidden shrink-0 grow-0 rounded-full w-20 h-20">
+                    <img class="object-cover w-full h-full" src="assets/p1.jpg" alt="persona1">
+                </div>
+                <div class="pl-1 text-center md:text-start py-1 flex-col">
+                    <h3 class="font-bold text-gray-600">Persona 1</h3>
+                    <p class="text-gray-500 italic">"Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Odit corpore."</p>
+                </div>
+            </article>
+
+            <!--Persona 2-->
+            <article
+                class="border-1 border-gray-200 md:w-2/3 md:mr-auto lg:w-2/5 lg:ml-70 shadow-xl pr-2 py-2 rounded-lg m-3 flex justify-between items-center">
+                <div class="flex py-1 px-3 text-center md:text-start flex-col">
+                    <h3 class="font-bold text-gray-600">Persona 2</h3>
+                    <p class="text-gray-500 italic">"Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Odit corpore."</p>
+                </div>
+                <div class="overflow-hidden shrink-0 grow-0 rounded-full w-20 h-20">
+                    <img class="object-cover w-full h-full" src="assets/p2.jpg" alt="persona1">
+                </div>
+            </article>
+
+            <!--Persona 3-->
+            <article
+                class="border-1 border-gray-200 md:w-2/3 md:ml-auto lg:w-2/5 lg:mr-70 shadow-xl pl-2 py-2 rounded-lg m-3 flex justify-between items-center">
+                <div class="overflow-hidden shrink-0 grow-0 rounded-full w-20 h-20">
+                    <img class="object-cover w-full h-full" src="assets/p3.jpg" alt="persona1">
+                </div>
+                <div class="pl-1 py-1 text-center md:text-start">
+                    <h3 class="font-bold  text-gray-600">Persona 3</h3>
+                    <p class="text-gray-500  italic">"Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Odit corpore."</p>
+                </div>
+            </article>
+
+            <!--Persona 4-->
+            <article
+                class="border-1 border-gray-200 shadow-xl pr-2 py-2 md:w-2/3 md:mr-auto lg:w-2/5 lg:ml-70 rounded-lg m-3 flex justify-between items-center">
+                <div class="flex py-1 text-center md:text-start px-3 flex-col">
+                    <h3 class="font-bold text-gray-600">Persona 4</h3>
+                    <p class="text-gray-500 italic">"Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Odit corpore."</p>
+                </div>
+                <div class="overflow-hidden shrink-0 grow-0 rounded-full w-20 h-20">
+                    <img class="object-cover w-full h-full" src="assets/p4.jpg" alt="persona1">
+                </div>
+            </article>
+
+            <!--Persona 5-->
+            <article
+                class="border-1 border-gray-200  md:w-2/3 md:ml-auto lg:w-2/5 lg:mr-70 shadow-xl pl-2 py-2 rounded-lg m-3 flex justify-between items-center">
+                <div class="overflow-hidden shrink-0 grow-0 rounded-full w-20 h-20">
+                    <img class="object-cover w-full h-full" src="assets/p5.jpg" alt="persona1">
+                </div>
+                <div class="pl-1 text-center md:text-start ">
+                    <h3 class="font-bold text-gray-600">Persona 5</h3>
+                    <p class="text-gray-500 italic">"Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Odit corpore."</p>
+                </div>
+            </article>
+
+            <!--Persona 6-->
+            <article
+                class="border-1 border-gray-200 shadow-xl pr-2 py-2 md:w-2/3 md:mr-auto lg:w-2/5 lg:ml-70 rounded-lg m-3 flex justify-between items-center">
+                <div class="flex py-1 px-3 text-center md:text-start flex-col">
+                    <h3 class="font-bold text-gray-600">Persona 6</h3>
+                    <p class="text-gray-500 italic">"Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Odit corpore."</p>
+                </div>
+                <div class="overflow-hidden shrink-0 grow-0 rounded-full w-20 h-20">
+                    <img class="object-cover w-full h-full" src="assets/p6.jpg" alt="persona1">
+                </div>
+            </article>
+        </section>
+
+        <!--Sección nuestros valores-->
+        <section class="bg-orange-400 text-center py-10  overflow-hidden">
+            <h2 class="text-3xl md:text-4xl text-center text-white font-bold">Nuestros valores</h2>
+
+            <!--Valor carrusel-->
+
+            <div class="flex mt-10 gap-5 flex-col lg:w-full lg:flex-row lg:animate-[rtl_30000ms_linear_infinite]">
+                <article class="w-full flex justify-between items-end px-10 py-2 mx-auto">
+                    <img class="w-30 h-30" src="assets/leaf.svg" alt="0 emisiones">
+                    <div class="text-3xl md:text-4xl pb-4 text-white font-bold">
+                        <h2 class="text-end">0g<br>CO2</h2>
+                        <h2 class="text-start">Emitidos</h2>
+                    </div>
+
+                </article>
+
+                <article class="w-full flex justify-between items-end px-10 py-2 mx-auto">
+                    <img class="w-30 h-30" src="assets/bike.svg" alt="activos">
+                    <div class="text-3xl md:text-4xl  text-end pb-4 text-white font-bold">
+                        <h2 class="">+1000 Registros</h2>
+                        <h2 class="">Activos</h2>
+                    </div>
+
+                </article>
+
+                <article class="w-full flex justify-between items-end px-10 py-2 mx-auto">
+                    <img class="w-30  h-30" src="assets/health.svg" alt="health">
+                    <div class="text-3xl md:text-4xl text-end pb-4 text-white font-bold">
+                        <h2 class="">-10% Lesiones</h2>
+                        <h2 class="">Sufridas</h2>
+                    </div>
+
+                </article>
+
+            </div>
+
+
+
+        </section>
+    </main>
+
+    <!--Footer-->
+    <footer class="bg-orange-400">
+        <section class="flex py-5 justify-center gap-6">
+            <a class="w-10 h-10" href="https://wa.me/34679377876">
+                <img class="object-cover" src="assets/whatsapp.png" alt="whatsapp">
+            </a>
+            <a class="w-10 h-10" href="https://instagram.com">
+                <img src="assets/instagram.png" alt="instagram">
+            </a>
+            <a class="w-10 h-10" href="mail:marcomorenilla@gmail.com">
+                <img src="assets/gmail.png" alt="gmail">
+            </a>
+        </section>
+        <section class="pb-1 flex justify-center gap-4">
+            <p class="text-center">© Todos los derechos reservados</p>
+            <a class="underline text-blue-500" href="privacidad.html">Política de privacidad</a>
+
+        </section>
+
+    </footer>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
