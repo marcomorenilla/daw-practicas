@@ -88,17 +88,14 @@
 
         </form>
 
-        <section class="mt-10 bg-white p-10">
+        <section  id="maps-section" class="mt-10 bg-white p-10">
 
             <h2 class=" px-6 text-3xl md:text-4xl font-bold text-orange-400 text-center mb-5 py-5">
                 Ven a vernos
             </h2>
 
-            <iframe class="rounded-lg m-auto w-full h-100" title="gmaps" style="border:0"
-                referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD1CSmgihMpjW-nGGu4W9YzguN8VQwr_-o&q=Plaza+Mayor+Valladolid"
-                allowfullscreen>
-            </iframe>
+            <div id="map" class="w-full rounded-lg h-96 mauto"></div>
+
         </section>
     </main>
 
@@ -123,6 +120,7 @@
 
     </footer>
     <script src="./js/index.js"></script>
+    <script type="module" src="js/maps.js"></script>
 </body>
 
 </html>

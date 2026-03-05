@@ -220,6 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const dialog = document.createElement('dialog')
         dialog.classList.add('m-auto', 'overflow-hidden', 'rounded-sm', 'backdrop:bg-gray-500/75')
+
         dialog.innerHTML = dialogTpl
         document.body.appendChild(dialog)
 
@@ -255,6 +256,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+        })
+
+        const closeEditDialog = document.getElementById('close-update-btn')
+        closeEditDialog.addEventListener('click', () => {
+            dialog.close()
+            document.body.removeChild(dialog)
         })
 
     }
