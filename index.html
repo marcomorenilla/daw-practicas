@@ -98,6 +98,7 @@
             <div id="bike-grid" class="mt-[4em] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-4">
 
             </div>
+            <div id="bike-warn"></div>
         </section>
 
         <!--Sección ¿Tienes alguna pregunta más?-->
@@ -204,6 +205,8 @@
                         <label class="my-1" for="mantenimiento">Mantenimiento</label>
                     </div>
                 </div>
+                <label class="text-xl my-2 font-semibold" for="kms">Kilómetros:</label>
+                <input type="number" class="border-1 p-1 border-blue-500 rounded-sm focus:shadow-lg focus:shadow-blue-500/50" id="kms" name="kms">
 
 
                 <div class="flex justify-center gap-2 mt-4">
@@ -226,7 +229,7 @@
     <script src="./js/index.js"></script>
     <script src="js/cookies.js"></script>
     <!--<script src="js/localStorage.js"></script>-->
-    <script src="js/get.js"></script>
+    <script type="module" src="js/bikeHandler.js"></script>
 </body>
 
 </html>

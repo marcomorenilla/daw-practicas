@@ -22,10 +22,14 @@ function createBike(bikeFormData: FormData) {
     const imgContainer: HTMLElement = document.createElement('div');
     imgContainer.classList.add('mx-auto', 'rounded-t-xl', 'overflow-hidden', 'w-full', 'h-64', 'md:h-80');
 
-    // Creamos imagen   
+    // Creamos imagen
+    //Nombre img
+    const imgName: string = String(bikeFormData.get('nombre')).split(' ').join('');
+
+    
     const bikeImg: HTMLImageElement = document.createElement('img');
     bikeImg.classList.add('object-cover', 'w-full', 'h-full', 'md:h-full');
-    bikeImg.src = `./assets/${bikeFormData.get('nombre').split(' ').join('')}.jpg`;
+    bikeImg.src = `./assets/${imgName}.jpg`;
     bikeImg.alt = String(bikeFormData.get('nombre'));
 
 
@@ -136,5 +140,12 @@ function deleteBike(bikeId: string) {
 }
 
 function showBike(bikeId: string) {
+console.log('Hola mundo')
+
+    
 
 }
+
+
+export { createBike, updateBike, createUpdateDialog, deleteBike, showBike };
+
