@@ -2,3 +2,5 @@ assets
 certs
 *config*
 *env*
+*lock*
+node_modules
