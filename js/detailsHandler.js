@@ -1,22 +1,45 @@
-import { addToCart } from "./services/cart.js"
+import { addToCart, handleCartVisibility, renderCartProducts } from "./services/cart.js"
 
 document.addEventListener('DOMContentLoaded', () => {
     const detailsMainSection = document.getElementById('details-main-section')
-    const updatedCartDialog = document.getElementById('cart-dialog')
     const queryParams = new URLSearchParams(location.search)
-    const bike = {
-        id: queryParams.get('id'),
-        nombre: queryParams.get('nombre'),
-        description: queryParams.get('description'),
-        talla: queryParams.get('talla'),
-        fecha: queryParams.get('fecha'),
-        estado: queryParams.get('estado'),
-        kms: queryParams.get('kms'),
-        img: queryParams.get('img')
+    const cartIcon = document.getElementById('cart-icon')
+    const cartSection = document.getElementById('cart-section')
+    const cartHiddenSection = document.getElementById('cart-hidden-section')
+    const cartProductSection = document.getElementById('cart-product-section')
+    const cartProductContainer = document.getElementById('cart-product-container')
+    const qtySpan = document.getElementById('qty-span')
+    const payBtn = document.getElementById('pay-btn')
+
+
+
+    const bikes = JSON.parse(localStorage.getItem('bikes')) || []
+
+    const bike = bikes.find(b => b.id == queryParams.get('id'))
+    const cart = JSON.parse(localStorage.getItem('cart')) || []
+
+
+    function toggleSpan() {
+        console.log('qty span', qtySpan.innerHTML, cart.length, typeof (cart))
+        if (cart.length > 0) {
+            if (qtySpan.classList.contains('hidden')) {
+                qtySpan.classList.remove('hidden')
+            }
+
+            qtySpan.innerHTML = cart.length
+
+        } else {
+            qtySpan.classList.add('hidden')
+
+        }
+    }
+
+    function saveToStorage() {
+        localStorage.setItem('cart', JSON.stringify(cart));
     }
 
 
-
+    toggleSpan()
 
     detailsMainSection.innerHTML = `
         <div class="bg-white md:w-[500px] border-1 border-gray-300 rounded-lg m-auto mb-10 p-6 flex flex-col shadow-lg hover:shadow-xl gap-4 text-gray-800">
@@ -37,16 +60,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
         </div>`;
 
+    const incrementQuantity = (bike) => {
+        bike.quantity++;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+    };
+
+    const decrementQuantity = (bike) => {
+        bike.quantity--;
+        if (bike.quantity <= 0) {
+            const index = cart.indexOf(bike);
+            cart.splice(index, 1);
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+    };
+
+    function renderCart() {
+        cartProductContainer.innerHTML = '';
+        renderCartProducts(
+            { section: cartProductContainer, cart: cart, btn: payBtn},
+            { onIncrement: incrementQuantity, onDecrement: decrementQuantity }
+        );
+    }
+
     const btnAddToCart = document.getElementById('btn-add-to-cart')
     btnAddToCart.addEventListener('click', () => {
-        let cart = JSON.parse(localStorage.getItem('cart')) || []
+
         addToCart(cart, bike)
-        updatedCartDialog.showModal()
-        setTimeout(() => {
-            updatedCartDialog.close()            
-        }, 2000)
+        toggleSpan()
+        saveToStorage()
     })
 
+    cartIcon.addEventListener('click', () => {
+        handleCartVisibility(cartSection, cartProductSection)
+        renderCart()
+    })
+
+
+    cartHiddenSection.addEventListener('click', () => {
+        handleCartVisibility(cartSection, cartProductSection)
+    })
 
 
 

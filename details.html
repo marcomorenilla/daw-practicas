@@ -20,6 +20,10 @@
             animation: progress 1s ease-in-out forwards;
         }
 
+        .is-visible {
+            animation: visible 0.5s ease-in-out;
+        }
+
         @keyframes progress {
             0% {
                 opacity: 0;
@@ -29,6 +33,16 @@
             100% {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes visible {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(0);
             }
         }
     </style>
@@ -52,17 +66,21 @@
         <div id="left-arrow" class="ml-3 lg:hidden">
             <img class="w-[40px] h-[40px]" src="assets/arrow-left.svg" alt="arrow-right">
         </div>
-        <ul class="hidden lg:flex flex-wrap gap-2">
+        <ul class="hidden lg:flex flex-wrap items-center gap-2">
             <li class="p-2 rounded-sm hover:bg-blue-500 hover:*:text-white"><a class="text-xl font-bold text-orange-400"
                     href="index.html">Inicio</a></li>
             <li class="p-2 rounded-sm hover:bg-blue-500 hover:*:text-white"><a class="text-xl font-bold text-orange-400"
                     href="about.html">Acerca de</a></li>
             <li class="p-2 rounded-sm hover:bg-blue-500 hover:*:text-white"><a class="text-xl font-bold text-orange-400"
                     href="contact.html">Contacto</a></li>
+            <!--Carro de la compra-->
+            <li class="p-2 rounded-sm "><img id="cart-icon" class="size-10 hover:size-15 hover:[&+span]:top-15" src="assets/cart.svg"
+                    alt="carro de la compra">
+                <span id="qty-span" class="hidden p-2 size-4 flex items-center text-xs font-bold justify-center animate-pulse bg-orange-400 text-white rounded-full absolute top-17 right-5 "></span></li>
         </ul>
 
         <!--Menú hamburguesa -->
-        <div id="b-menu" 
+        <div id="b-menu"
             class="opacity-0 pointer-events-none transition-opacity duration-300 absolute top-0 left-0  w-full h-screen lg:hidden grid grid-cols-2">
             <div class="backdrop-blur-[2px] bg-black/50"></div>
             <div id="col-right" class="z-1 h-full bg-white">
@@ -79,9 +97,11 @@
                 </ul>
             </div>
         </div>
+
     </nav>
 
-    <main id="details-main-section" class="mt-10 relative lg:mt-50">
+
+    <main id="details-main-section" class="mt-10 lg:mt-50">
 
     </main>
 
@@ -104,13 +124,25 @@
         </section>
     </footer>
 
-    <dialog id="cart-dialog" class="fixed" >
-        <div class="absolute top-10 right-10 bg-white md:w-lg p-5 flex flex-col justify-center gap-4">
-            <h2 class="text-green-500 p-3 font-bold text-center text-2xl">
-                Carrito actualizado
-            </h2>
+    <section id="cart-section" class="hidden fixed inset-0 flex justify-between">
+        <div id="cart-hidden-section" class="hidden w-full md:block bg-gray-100/50">
+
         </div>
-    </dialog>
+        <div id="cart-product-section" class="w-screen flex flex-col md:w-1/2 lg:w-2/5 bg-white ">
+            <h2 class=" text-4xl text-orange-400 text-center p-[20px] border-b-3 border-orange-400/75 font-bold">Carrito
+            </h2>
+
+            <p id="empty-cart-warn" class="text-center py-10 text-orange-400 font-semibold text-2xl hidden">Tu carrito
+                está vacío</p>
+
+            <div id="cart-product-container" class="">
+
+            </div>
+            <button id="pay-btn" class="text-center bg-orange-400 font-bold hover:bg-orange-600 text-white rounded-sm m-auto p-2">Pedalear</button>
+        </div>
+
+    </section>
+
 
     <script src="js/index.js"></script>
     <script type="module" src="js/detailsHandler.js"></script>

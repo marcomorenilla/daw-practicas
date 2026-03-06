@@ -84,14 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const queryParams = new URLSearchParams()
         queryParams.append('id', bike.id)
-        queryParams.append('nombre', bike.nombre)
-        queryParams.append('description', bike.description)
-        queryParams.append('talla', bike.talla)
-        queryParams.append('fecha', bike.fecha)
-        queryParams.append('estado', bike.estado)
-        queryParams.append('kms', bike.kms)
-        queryParams.append('img', bike.img)
-
 
 
         window.open(`https://web.intratum/details.html?${queryParams.toString()}`)
