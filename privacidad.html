@@ -15,10 +15,40 @@
         .font-poppins {
             font-family: "Poppins", sans-serif;
         }
+
+        #cart-dialog[open] {
+            animation: progress 1s ease-in-out forwards;
+        }
+
+        .is-visible {
+            animation: visible 0.5s ease-in-out;
+        }
+
+        @keyframes progress {
+            0% {
+                opacity: 0;
+                transform: translateY(100%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes visible {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
     </style>
 </head>
 
-<body>
+<body class="font-poppins">
     <!--Navegación -->
     <nav id="nav"
         class="lg:fixed w-full top-0 flex flex-wrap justify-between rounded-b-sm items-center py-5 px-5 bg-white">
@@ -29,42 +59,60 @@
 
         <h1 class="text-center text-6xl text-orange-400 font-bold">Bike</h1>
 
-        <!--Menú escritorio -->
-        <div id="left-arrow" class="ml-3 lg:hidden">
-            <img class="w-[40px] h-[40px]" src="assets/arrow-left.svg" alt="arrow-right">
-        </div>
-        <ul class="hidden lg:flex flex-wrap gap-2">
-            <li class="p-2 rounded-sm hover:bg-blue-500 hover:*:text-white"><a class="text-xl font-bold text-orange-400"
-                    href="index.html">Inicio</a></li>
-            <li class="p-2 rounded-sm hover:bg-blue-500 hover:*:text-white"><a class="text-xl font-bold text-orange-400"
-                    href="about.html">Acerca de</a></li>
-            <li class="p-2 rounded-sm hover:bg-blue-500 hover:*:text-white"><a class="text-xl font-bold text-orange-400"
-                    href="contact.html">Contacto</a></li>
-        </ul>
 
-        <!--Menú hamburguesa -->
-        <div id="b-menu"
-            class="opacity-0 pointer-events-none transition-opacity duration-300 absolute top-0 left-0  w-full h-screen lg:hidden grid grid-cols-2">
-            <div class="backdrop-blur-[2px] bg-black/50"></div>
-            <div id="col-right" class="z-1 h-full bg-white">
-                <div id="right-arrow" class="ml-4 mt-8">
-                    <img class="w-[50px] h-[50px]" src="assets/arrow-right.svg" alt="arrow-right">
-                </div>
-                <ul class="flex flex-col text-end justify-end flex-wrap">
-                    <li class="px-2 py-5 border-b-1 border-t-2 border-gray-200"><a
-                            class="text-xl font-bold text-orange-400" href="index.html">Inicio</a></li>
-                    <li class="px-2 py-5 "><a class="text-xl font-bold text-orange-400" href="about.html">Acerca de</a>
-                    </li>
-                    <li class="px-2 py-5 border-b-1 border-t-2 border-gray-200"><a
-                            class="text-xl font-bold text-orange-400" href="contact.html">Contacto</a></li>
-                </ul>
+
+        <div class="flex gap-2">
+            <!--Menú escritorio -->
+            <ul class="hidden lg:flex flex-wrap items-center gap-2">
+                <li class="p-2 rounded-sm hover:bg-blue-500 hover:*:text-white"><a
+                        class="text-xl font-bold text-orange-400" href="index.html">Inicio</a></li>
+                <li class="p-2 rounded-sm hover:bg-blue-500 hover:*:text-white"><a
+                        class="text-xl font-bold text-orange-400" href="about.html">Acerca de</a></li>
+                <li class="p-2 rounded-sm hover:bg-blue-500 hover:*:text-white"><a
+                        class="text-xl font-bold text-orange-400" href="contact.html">Contacto</a></li>
+            </ul>
+
+            <!--Carro de la compra-->
+            <div class="p-2 rounded-sm "><img id="cart-icon" class="size-10 hover:size-15 hover:[&+span]:top-15"
+                    src="assets/cart.svg" alt="carro de la compra">
+                <span id="qty-span"
+                    class="hidden p-2 size-4 flex items-center text-xs font-bold justify-center animate-pulse bg-orange-400 text-white rounded-full absolute top-5 md:top-17 right-20 lg:right-5 "></span>
             </div>
+
+            <div id="left-arrow" class="ml-3 lg:hidden">
+                <img class="w-[40px] h-[40px]" src="assets/arrow-left.svg" alt="arrow-right">
+            </div>
+
+
+            <!--Menú hamburguesa -->
+            <div id="b-menu"
+                class="opacity-0 pointer-events-none transition-opacity duration-300 absolute top-0 left-0  w-full h-screen lg:hidden grid grid-cols-2">
+                <div class="backdrop-blur-[2px] bg-black/50"></div>
+                <div id="col-right" class="z-1 h-full bg-white">
+                    <div id="right-arrow" class="ml-4 mt-8">
+                        <img class="w-[50px] h-[50px]" src="assets/arrow-right.svg" alt="arrow-right">
+                    </div>
+                    <ul class="flex flex-col text-end justify-end flex-wrap">
+                        <li class="px-2 py-5 border-b-1 border-t-2 border-gray-200"><a
+                                class="text-xl font-bold text-orange-400" href="index.html">Inicio</a></li>
+                        <li class="px-2 py-5 "><a class="text-xl font-bold text-orange-400" href="about.html">Acerca
+                                de</a>
+                        </li>
+                        <li class="px-2 py-5 border-b-1 border-t-2 border-gray-200"><a
+                                class="text-xl font-bold text-orange-400" href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
+
+
     </nav>
 
     <main class="mt-10 lg:mt-50 p-10">
         <h1 class="text-4xl font-bold text-center">Privacidad</h1>
-        <p class="mt-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita exercitationem veritatis omnis totam
+        <p class="mt-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita exercitationem veritatis
+            omnis totam
             perferendis quis odio consectetur, magni, dolorem a perspiciatis fugit? Et itaque nostrum totam deserunt
             dignissimos sapiente. Quam, recusandae maiores! Voluptate unde ipsum consequatur eum ullam, quis obcaecati
             ab
@@ -183,8 +231,34 @@
             <a class="underline text-blue-500" href="privacidad.html">Política de privacidad</a>
         </section>
     </footer>
+    <!-- Carro -->
+    <section id="cart-section" class="hidden fixed inset-0 flex justify-between">
+        <div id="cart-hidden-section" class="hidden w-full md:block bg-gray-100/50">
+
+        </div>
+        <div id="cart-product-section" class="w-screen flex flex-col lg:w-2/5 bg-white ">
+            <div class="flex p-[20px] border-b-3 border-orange-400/75 items-center justify-between">
+                <h2 class=" text-4xl text-orange-400 text-center font-bold">
+                    Carrito
+                </h2>
+                <img id="btn-close-cart" class="size-10" src="assets/close.svg" alt="cerrar carro">
+            </div>
+
+
+            <p id="empty-cart-warn" class="text-center py-10 text-orange-400 font-semibold text-2xl hidden">Tu carrito
+                está vacío</p>
+
+            <div id="cart-product-container" class="">
+
+            </div>
+            <button id="pay-btn"
+                class="text-center bg-orange-400 font-bold hover:bg-orange-600 text-white rounded-sm m-auto p-2">Pedalear</button>
+        </div>
+
+    </section>
 
     <script src="./js/index.js"></script>
+    <script type="module" src="js/cart.js"></script>
 </body>
 
 </html>

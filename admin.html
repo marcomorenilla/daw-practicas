@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bicicletas</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="shortcut icon" href="./assets/web-ico.svg" type="image/x-icon">
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        .font-poppins {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <main class="mt-5 flex gap-4 justify-center">
+        <div
+            class="bg-white md:w-lg p-5 flex flex-col border border-gray-300 rounded-sm shadow-lg hover:shadow-xl justify-center gap-4">
+            <div class="flex gap-10 justify-center items-center">
+                <h2 class="text-2xl font-semibold">Formulario bicicletas</h2>
+            </div>
+            <form id="bike-form" class="flex flex-col w-5/6 m-auto bg-white rounded-sm ">
+                <label class="text-xl my-2 font-semibold" for="nombre">Nombre:</label>
+                <input class="border-1 border-blue-500 rounded-sm focus:shadow-lg focus:shadow-blue-500/50 p-1"
+                    type="text" name="nombre" id="nombre">
+                <label class="text-xl my-2 font-semibold" for="description">Descripción:</label>
+                <textarea id="description" name="description"
+                    class="border-1 border-blue-500 rounded-sm focus:shadow-lg focus:shadow-blue-500/50  p-1" rows="4"
+                    cols="50"></textarea>
+                <label for="talla" class="text-xl my-2 font-semibold">Talla:</label>
+                <select class="border-1 p-1 border-blue-500 rounded-sm focus:shadow-lg focus:shadow-blue-500/50"
+                    name="talla" id="talla">
+                    <option value="">Selecciona una talla...</option>
+                    <option value="S">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">xL</option>
+                </select>
+
+                <label for="fecha" class="text-xl my-2 font-semibold">Fecha de creación:</label>
+                <input class="border-1 p-1 border-blue-500 rounded-sm focus:shadow-lg focus:shadow-blue-500/50"
+                    type="date" name="fecha" id="fecha">
+
+                <label class="text-xl my-2 font-semibold" for="estado">Estado:</label>
+                <div class="flex flex-col items-start">
+                    <div class="flex gap-2 items-center">
+                        <input type="radio" id="nueva" name="estado" value="nueva" checked>
+                        <label class="my-1" for="nueva">Nueva</label>
+                    </div>
+                    <div class="flex gap-2 items-center">
+                        <input type="radio" id="reacondicionada" name="estado" value="reacondicionada">
+                        <label class="my-1" for="reacondicionada">Reacondicionada</label>
+                    </div>
+                    <div class="flex gap-2 items-center">
+                        <input type="radio" id="mantenimiento" name="estado" value="mantenimiento">
+                        <label class="my-1" for="mantenimiento">Mantenimiento</label>
+                    </div>
+                </div>
+                <label class="text-xl my-2 font-semibold" for="kms">Kilómetros:</label>
+                <input type="number"
+                    class="border-1 p-1 border-blue-500 rounded-sm focus:shadow-lg focus:shadow-blue-500/50" id="kms"
+                    name="kms">
+
+
+                <div class="flex justify-center gap-2 mt-4">
+                    <button id="send-form-btn" type="submit"
+                        class="font-semibold text-white bg-blue-500 p-1 rounded-sm hover:bg-blue-700 hover:text-white focus:bg-blue-700">
+                        Añadir</button>
+                </div>
+
+
+            </form>
+        </div>
+        <div id="bikes-table-div" class="border border-gray-300 rounded-sm h-fit">
+            <table class="table-auto [&_th]:p-2 [&_td]:p-2 text-center shadow-lg text-l ">
+                <thead class="bg-orange-400/75">
+                    <tr>
+                        <th>Nombre:</th>
+                        <th>Talla:</th>
+                        <th>Fecha de creación:</th>
+                        <th>Estado:</th>
+                        <th>Kilómetros:</th>
+                        <th>Acciones:</th>
+                    </tr>
+                </thead>
+                <tbody id="t-body" class="[&_tr]:even:bg-orange-400/25">
+
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <dialog id="confirm-dialog" class="fixed self-center justify-self-center p-5 rounded-lg">
+        <form id="confirm-dialog-form" class="flex flex-col items-center gap-3" method="dialog">
+
+            <h2 class="text-center font-bold text-xl">¿Deseas eliminar el artículo?</h2>
+            <p class="text-center">Recuerda que esta acción es irreversible</p>
+            <div class="flex gap-2">
+                <button id="confirm-btn" class="rounded-sm bg-blue-500 text-white font-bold p-2 text-lg hover:bg-blue-700 ">Aceptar</button>
+                <button id="cancel-btn" class="rounded-sm bg-red-500 text-white font-bold p-2 text-lg hover:bg-red-700">Cancelar</button>
+            </div>
+        </form>
+
+    </dialog>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
