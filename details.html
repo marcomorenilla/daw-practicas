@@ -47,6 +47,7 @@
         }
     </style>
 
+
 </head>
 
 <body class="font-poppins">
@@ -111,58 +112,9 @@
 
     </nav>
 
-    <!--Sección principal-->
-    <main class="mt-10 lg:mt-50">
 
-        <!-- Botón añadir-->
-        <img id="show-form" class="size-10 absolute bottom-5 right-5 fixed z-2 hover:size-15" src="assets/add.svg"
-            alt="add item">
+    <main id="details-main-section" class="mt-10 p-5 lg:mt-50">
 
-        <!--Sección ¿Quién somos? -->
-        <section class="text-center bg-orange-400 py-20">
-            <h2 class="text-3xl md:text-4xl font-bold text-white"> ¿Quién somos?</h2>
-            <p class="w-3/4 my-12 mx-auto font-medium text-lg md:text-2xl">Lorem ipsum dolor sit amet consectetur
-                adipisicing elit.
-                Labore quod
-                vero in? Voluptas ipsa quisquam
-                corrupti autem harum aliquam, possimus fugit deserunt quam recusandae deleniti tenetur magnam
-                consequuntur minima eligendi rerum sed fuga doloribus ad. Harum praesentium, recusandae ipsum ad natus
-                quae neque inventore error itaque voluptate omnis excepturi iure molestias eius quas, voluptatum illum
-                eum perferendis quod aliquam placeat, ratione nemo possimus saepe? Omnis exercitationem reprehenderit
-                tempore nulla? Culpa aut corporis obcaecati quidem illum, ipsa tempore dignissimos vitae error nemo
-                asperiores pariatur vel eos harum consequatur tenetur voluptas. Quos consequatur, fugiat eaque obcaecati
-                animi fugit velit autem nesciunt repellendus.</p>
-            <a class="mx-auto text-center text-xl md:text-2xl text-white bg-blue-500 font-bold rounded-sm p-2 hover:bg-blue-700"
-                href="about.html">Conoce más...</a>
-        </section>
-
-        <!--Sección No te las pierdas -->
-        <section class="mt-[6em] text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-orange-400">No te las pierdas...</h2>
-
-            <!--Grid Bicis -->
-            <div id="bike-grid" class="mt-[4em] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-4">
-
-            </div>
-            <div id="bike-warn"></div>
-        </section>
-
-        <!--Sección ¿Tienes alguna pregunta más?-->
-        <section class="mt-[6em] text-center bg-orange-400 py-5 md:py-20">
-            <h2 class=" px-6 text-3xl md:text-4xl font-bold text-white py-5">
-                ¿Tienes alguna pregunta más?
-            </h2>
-            <div class="my-5 px-10">
-                <p class="mb-2 font-medium text-xl md:text-2xl">Envíanos tu pregunta a través de nuestra página
-                    de contacto o a
-                    través de las RSS.</p>
-                <p class="font-medium text-xl md:text-2xl">Estaremos encantados de atenderte
-                </p>
-            </div>
-
-            <a class="text-center text-xl md:text-2xl text-white bg-blue-500 font-bold rounded-sm p-2 hover:bg-blue-700"
-                href="contact.html">Contacto</a>
-        </section>
     </main>
 
     <!--Footer-->
@@ -183,29 +135,6 @@
             <a class="underline text-blue-500" href="privacidad.html">Política de privacidad</a>
         </section>
     </footer>
-
-    <!-- Política de cookies-->
-    <dialog id="cookies" class="m-auto overflow-hidden rounded-sm backdrop:bg-gray-500/75 ">
-        <div class="bg-white md:w-lg p-5 flex flex-col justify-center gap-4">
-            <div class="flex gap-10 justify-center items-center">
-                <h2 class="text-2xl font-semibold">Política de cookies</h2>
-                <img class="size-8" src="assets/cookie.svg" alt="cookie">
-            </div>
-
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati enim inventore sed corporis
-                perspiciatis
-                tenetur quis animi quibusdam, consequuntur excepturi ducimus error, necessitatibus asperiores in nemo
-                veritatis quas, quod harum.</p>
-            <a class="text-center w-xs focus:outline-none m-auto border-0 text-blue-700" href="cookies.html">Política de
-                cookies</a>
-            <div class="flex justify-center gap-2">
-                <button id="acept-cookies-btn"
-                    class="font-semibold text-white bg-blue-500 p-1 rounded-sm hover:bg-blue-700 hover:text-white focus:bg-blue-700">Aceptar</button>
-                <button id="reject-cookies-btn"
-                    class="font-semibold text-blue-700 border-1 border-blue-700 p-1 rounded-sm hover:bg-blue-700 hover:text-white focus:bg-blue-700">Cancelar</button>
-            </div>
-        </div>
-    </dialog>
 
     <!-- Carro -->
     <section id="cart-section" class="hidden fixed inset-0 flex justify-between">
@@ -234,11 +163,13 @@
     </section>
 
 
-    <!--Scripts-->
-    <script src="./js/menu.js"></script>
-    <script src="js/cookies.js"></script>
-    <script src="js/bikeCard.js"></script>
+
+    <script src="js/menu.js"></script>
+    <script type="module" src="js/details.js"></script>
     <script type="module" src="js/cart.js"></script>
+
+
+
 </body>
 
 </html>

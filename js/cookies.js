@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const aceptCookiesBtn = document.getElementById('acept-cookies-btn')
     const rejectCookiesBtn = document.getElementById('reject-cookies-btn')
 
-    //cookies.showModal()
+    cookies.showModal()
 
 
     aceptCookiesBtn.addEventListener('click', () => {

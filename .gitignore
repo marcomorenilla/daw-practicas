@@ -1,3 +1,6 @@
 assets
 certs
-*-config.js
+*config*
+*env*
+*lock*
+node_modules

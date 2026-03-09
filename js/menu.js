@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const nav = document.getElementById('nav')
     const bMenu = document.getElementById('b-menu')
 
+    function actionClick(){
+        
+    }
+
     const rightArrow = document.getElementById('right-arrow')
     rightArrow.addEventListener('click', ()=> {
         console.log('click right arrow')
